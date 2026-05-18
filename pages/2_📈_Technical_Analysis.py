@@ -5,8 +5,14 @@ Detailed technical charts — RSI, MACD, returns distribution.
 
 import streamlit as st
 from components import rsi_chart, macd_chart, returns_histogram
+from components.nav import render_nav
+from components.sidebar import render_sidebar
 
-st.set_page_config(page_title="Technical Analysis", page_icon="📈", layout="wide")
+st.set_page_config(page_title="Technical Analysis", page_icon="📈", layout="wide", initial_sidebar_state="collapsed")
+
+# ── FinPilot top nav + shared sidebar ──
+render_nav("Technical")
+render_sidebar()
 st.title("📈 Technical Analysis")
 
 if "df" not in st.session_state or "summary" not in st.session_state:

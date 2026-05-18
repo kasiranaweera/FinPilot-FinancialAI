@@ -6,8 +6,14 @@ LLM-generated trade signal display.
 import streamlit as st
 from components import signal_badge, disclaimer_box
 from config.settings import COLORS, RISK_DISCLAIMER
+from components.nav import render_nav
+from components.sidebar import render_sidebar
 
-st.set_page_config(page_title="AI Trade Signal", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="AI Trade Signal", page_icon="🤖", layout="wide", initial_sidebar_state="collapsed")
+
+# ── FinPilot top nav + shared sidebar ──
+render_nav("AI Signal")
+render_sidebar()
 st.title("🤖 AI Trade Signal")
 
 if "trade_signal" not in st.session_state:

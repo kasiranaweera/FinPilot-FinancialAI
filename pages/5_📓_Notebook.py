@@ -6,8 +6,15 @@ Embedded Jupyter notebook viewer — browse the source notebook inline.
 import json
 import pathlib
 import streamlit as st
+from components.nav import render_nav
+from components.sidebar import render_sidebar
 
-st.set_page_config(page_title="Source Notebook", page_icon="📓", layout="wide")
+st.set_page_config(page_title="Source Notebook", page_icon="📓", layout="wide", initial_sidebar_state="collapsed")
+
+# ── FinPilot top nav + shared sidebar ──
+render_nav("Notebook")
+render_sidebar()
+
 st.title("📓 Source Notebook")
 st.caption("Browse the original FinPilot-FinancialAI notebook that powers this dashboard.")
 

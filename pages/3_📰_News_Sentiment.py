@@ -5,8 +5,14 @@ LLM-powered headline sentiment analysis.
 
 import streamlit as st
 from components import sentiment_badge, sentiment_bar
+from components.nav import render_nav
+from components.sidebar import render_sidebar
 
-st.set_page_config(page_title="News & Sentiment", page_icon="📰", layout="wide")
+st.set_page_config(page_title="News & Sentiment", page_icon="📰", layout="wide", initial_sidebar_state="collapsed")
+
+# ── FinPilot top nav + shared sidebar ──
+render_nav("Sentiment")
+render_sidebar()
 st.title("📰 News Sentiment Analysis")
 
 if "sentiment_batch" not in st.session_state:

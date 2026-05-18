@@ -5,8 +5,14 @@ Stock snapshot — price, indicators, performance summary.
 
 import streamlit as st
 from components import price_chart, metric_card
+from components.nav import render_nav
+from components.sidebar import render_sidebar
 
-st.set_page_config(page_title="Overview", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Overview", page_icon="📊", layout="wide", initial_sidebar_state="collapsed")
+
+# ── FinPilot top nav + shared sidebar ──
+render_nav("Overview")
+render_sidebar()
 st.title("📊 Stock Overview")
 
 if "df" not in st.session_state or "summary" not in st.session_state:
