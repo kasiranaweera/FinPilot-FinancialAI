@@ -99,10 +99,10 @@ with st.sidebar:
 # ---------------------------------------------------------------------------
 # Home content (before analysis runs)
 # ---------------------------------------------------------------------------
-st.markdown(f"# {APP_ICON} Financial AI — Equity Research Dashboard")
+st.markdown(f"# {APP_ICON} FinPilot-FinancialAI — Equity Research Dashboard")
 st.markdown(
     "An **LLM-powered equity research pipeline** built on the "
-    "[CDAZZDEV Task 1 notebook](pages/5_📓_Notebook.py). "
+    "[FinPilot-FinancialAI notebook](pages/5_📓_Notebook.py). "
     "Configure your ticker in the sidebar and click **Run Analysis**."
 )
 
@@ -220,7 +220,7 @@ disclaimer_box(RISK_DISCLAIMER)
 st.markdown(
     f"""
     <div style="text-align:center;font-size:11px;color:#888;margin-top:32px">
-        CDAZZDEV · Financial AI Dashboard v{APP_VERSION} ·
+        FinPilot · Financial AI Dashboard v{APP_VERSION} ·
         Built with Streamlit + Groq Llama-3 + yfinance
     </div>
     """,

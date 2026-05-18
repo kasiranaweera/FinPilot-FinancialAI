@@ -9,9 +9,9 @@ import streamlit as st
 
 st.set_page_config(page_title="Source Notebook", page_icon="📓", layout="wide")
 st.title("📓 Source Notebook")
-st.caption("Browse the original CDAZZDEV Task 1 notebook that powers this dashboard.")
+st.caption("Browse the original FinPilot-FinancialAI notebook that powers this dashboard.")
 
-NOTEBOOK_PATH = pathlib.Path(__file__).parent.parent / "notebooks" / "CDAZZDEV_Task1_Financial_AI.ipynb"
+NOTEBOOK_PATH = pathlib.Path(__file__).parent.parent / "notebooks" / "FinPilot-FinancialAI.ipynb"
 
 if not NOTEBOOK_PATH.exists():
     st.error(f"Notebook not found at `{NOTEBOOK_PATH}`")
