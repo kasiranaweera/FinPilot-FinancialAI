@@ -1,6 +1,6 @@
 # 📈 FinPilot-FinancialAI — Equity Research Dashboard
 
-An LLM-powered equity research Streamlit app built from the **CDAZZDEV Task 1** notebook.
+An LLM-powered equity research Streamlit app built from the **FinPilot-FinancialAI** notebook.
 
 ## ✨ Features
 
@@ -115,7 +115,7 @@ yfinance (curl_cffi) → Stooq direct HTTP → Alpha Vantage → Error
 
 The original notebook is stored at:
 ```
-notebooks/CDAZZDEV_Task1_Financial_AI.ipynb
+notebooks/FinPilot-FinancialAI.ipynb
 ```
 
 Browse it interactively via the **📓 Notebook** page in the app,
