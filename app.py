@@ -38,12 +38,18 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------------------------------
-# Global CSS
+# Global CSS — top nav + hide sidebar page links
 # ---------------------------------------------------------------------------
 st.markdown(
     """
     <style>
+        /* Sidebar styling */
         [data-testid="stSidebar"] { background: #F5F4F0; }
+
+        /* Hide the auto-generated page links from sidebar */
+        [data-testid="stSidebarNav"] { display: none; }
+
+        /* Run button */
         .stButton > button {
             background: #185FA5;
             color: white;
@@ -54,10 +60,71 @@ st.markdown(
             padding: 10px;
         }
         .stButton > button:hover { background: #1D4F8A; }
-        .block-container { padding-top: 1.5rem; }
+
+        /* Give space below the fixed top nav */
+        .block-container { padding-top: 4.5rem; }
+
         h1 { color: #2C2C2A; }
         h2, h3 { color: #185FA5; }
+
+        /* ── Top navigation bar ── */
+        .finpilot-topnav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 999;
+            background: #FFFFFF;
+            border-bottom: 2px solid #E8E6E0;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            height: 52px;
+            gap: 6px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+        }
+        .finpilot-topnav .brand {
+            font-size: 16px;
+            font-weight: 800;
+            color: #185FA5;
+            margin-right: 24px;
+            white-space: nowrap;
+            letter-spacing: -0.3px;
+        }
+        .finpilot-topnav .brand span { color: #1D9E75; }
+        .finpilot-topnav a {
+            text-decoration: none;
+            color: #5F5E5A;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+        }
+        .finpilot-topnav a:hover {
+            background: #EEF3FA;
+            color: #185FA5;
+        }
+        .finpilot-topnav a.active {
+            background: #185FA5;
+            color: #fff !important;
+        }
     </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Inject top nav (Streamlit page links use ?page= routing in multi-page apps)
+st.markdown(
+    f"""
+    <div class="finpilot-topnav">
+        <div class="brand">Fin<span>Pilot</span>-FinancialAI</div>
+        <a href="/" target="_self">🏠 Home</a>
+        <a href="/Overview" target="_self">📊 Overview</a>
+        <a href="/Technical_Analysis" target="_self">📈 Technical</a>
+        <a href="/News_Sentiment" target="_self">📰 Sentiment</a>
+        <a href="/AI_Signal" target="_self">🤖 AI Signal</a>
+        <a href="/Notebook" target="_self">📓 Notebook</a>
+    </div>
     """,
     unsafe_allow_html=True,
 )
@@ -102,7 +169,7 @@ with st.sidebar:
 st.markdown(f"# {APP_ICON} FinPilot-FinancialAI — Equity Research Dashboard")
 st.markdown(
     "An **LLM-powered equity research pipeline** built on the "
-    "[FinPilot-FinancialAI notebook](pages/5_📓_Notebook.py). "
+    "[FinPilot-FinancialAI notebook](/Notebook). "
     "Configure your ticker in the sidebar and click **Run Analysis**."
 )
 
