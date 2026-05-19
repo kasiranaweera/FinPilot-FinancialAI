@@ -29,11 +29,12 @@ FinPilot-FinancialAI_app/
 │   └── FinPilot-FinancialAI.ipynb   # 📓 Source notebook
 │
 ├── pages/                          # Streamlit multi-page app
-│   ├── 1_📊_Overview.py
-│   ├── 2_📈_Technical_Analysis.py
-│   ├── 3_📰_News_Sentiment.py
-│   ├── 4_🤖_AI_Signal.py
-│   └── 5_📓_Notebook.py
+│   ├── Technical_Analysis.py       # 📈 Technical indicators
+│   ├── News_Sentiment.py           # 📰 News sentiment analysis
+│   ├── AI_Signal.py                # 🤖 AI trade signals
+│   ├── Notebook.py                 # 📓 Source notebook viewer
+│   ├── Export.py                   # 📤 Export & sharing
+│   └── Settings.py                 # ⚙️ App settings
 │
 ├── components/                     # Reusable UI building blocks
 │   ├── __init__.py
